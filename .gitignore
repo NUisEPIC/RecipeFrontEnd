@@ -26,11 +26,9 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+# cordova stuff
 platforms/
-#platforms/wp8/www
-#platforms/wp8/.staging
-#platforms/wp8/*.suo
-#platforms/wp8/*.csproj.user
+plugins
 
 # res
 resources/signing
