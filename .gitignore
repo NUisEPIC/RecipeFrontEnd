@@ -27,8 +27,8 @@ coverage
 build/Release
 
 # cordova stuff
-platforms/*
-plugins/*
+platforms/
+plugins/
 
 # res
 resources/signing
