@@ -28,7 +28,7 @@ build/Release
 
 # cordova stuff
 platforms/
-plugins
+plugins/
 
 # res
 resources/signing
