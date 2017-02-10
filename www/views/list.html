@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<link rel="stylesheet" href="../node_modules/semantic-ui/dist/semantic.css">
+	</head>
+
+	<body ng-controller="RecipeListController as vm">
+		<h1 class="ui centered header">Recipes</h1>
+		<div class="ui grid container">
+            <div class="centered row">
+                <div class="ui input">
+                    <form>
+                        <input id="search" type="text" placeholder="Search..." />
+                    </form>
+                </div>
+            </div>
+            <div class="ui divided link items">
+                <div class="item" ng-repeat="recipe in vm.recipes" href="/recipe-details/{{recipe.id}}">
+                    <div class="image">
+                        <img src="http://www.seriouseats.com/recipes/assets_c/2015/05/20150511-scrambled-eggs-vicky-wasik-17-thumb-1500xauto-423060.jpg">
+                    </div>
+                    <div class="content">
+                        <a class="header">{{recipe.name}}</a>
+                        <div class="description">
+                            <p>
+                                {{recipe.description}}
+                            </p>
+                        </div>
+                        <div class="extra">
+                            {{recipe.ingredients}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/angular/angular.js"></script>
+		<script src="../node_modules/semantic-ui/dist/semantic.js"></script>
+        <script src="../app.js"></script>
+        <script src="../js/recipeListController.js"></script>
+	</body>
+</html>

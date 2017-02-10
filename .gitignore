@@ -44,4 +44,6 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-
+www/node_modules
+taco.json
+plugins/**/*
