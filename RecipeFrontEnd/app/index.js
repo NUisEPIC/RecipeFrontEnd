@@ -1,17 +1,20 @@
 // Storing the package content into pg variable
 var pg = require('pg');
+require('./env.js');
 
 var config = {
-  user: 'foo', //env var: PGUSER 
-  database: 'my_db', //env var: PGDATABASE 
-  password: 'secret', //env var: PGPASSWORD 
-  host: 'localhost', // Server hosting the postgres database 
-  port: 5432, //env var: PGPORT 
+  user: process.env.POSTGRES_USER, //env var: PGUSER 
+  database: 'recipedb', //env var: PGDATABASE 
+  password: process.env.POSTGRES_PASSWORD, //env var: PGPASSWORD 
+  host: '127.0.0.1', // Server hosting the postgres database 
+  port: process.env.POSTGRES_PORT, //env var: PGPORT 
   max: 10, // max number of clients in the pool 
   idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed 
 };
 
-var client  = new pg.Client()
+var conString = "pg://postgres:postgres@127.0.0.1:5432/recipedb"
+
+var client  = new pg.Client(conString);
 
 client.connect(function (err) {
   if (err) {throw err};
