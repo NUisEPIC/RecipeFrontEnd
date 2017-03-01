@@ -9,7 +9,7 @@
     </div>
     <div class="centered row">
         <div class="ui divided link items">
-            <div class="item" ng-repeat="recipe in vm.recipes" href="/recipe-details/{{recipe.id}}">
+            <div class="item" ng-repeat="recipe in vm.recipes" ng-href="/recipe-details/{{recipe.id}}">
                 <div class="image">
                     <img ng-src="img/{{recipe.image}}">
                 </div>
@@ -27,4 +27,5 @@
             </div>
         </div>
     </div>
+    <button ng-click="vm.request()">TEST BUTTON</button>
 </div>
