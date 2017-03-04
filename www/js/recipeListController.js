@@ -5,13 +5,13 @@
 
     function RecipeListController() {
         var vm = this;
-        //vm.recipes = [{
-            //id: '1',
-            //name: 'Scrambled Eggs',
-            //description: 'They are eggs.',
-            //ingredients: ['milk', 'eggs', 'cheese'],
-            //image: 'scrambled_eggs.jpeg'
-        //}
+        // vm.recipes = [{
+        //     id: '1',
+        //     name: 'Scrambled Eggs',
+        //     description: 'They are eggs.',
+        //     ingredients: ['milk', 'eggs', 'cheese'],
+        //     image: 'scrambled_eggs.jpeg'
+        // }
 
         $(function() {
             $.get('https://nuisepic.com/recipedb')
