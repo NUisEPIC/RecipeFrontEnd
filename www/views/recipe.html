@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-  <link rel="stylesheet" href="./css/recipe.css">
-  </head>
-  <body>
-  <div class="container">
-  <div class="centered">
+<head>
+    <link rel="stylesheet" href="./css/recipe.css">
+</head>
+<body>
     <div ng-repeat="recipe in vm.recipes">
-        <div class="image row"><img ng-src="./img/{{recipe.meal_title}}.jpeg"></div>
-        <div class="header row">{{recipe.meal_title}}</div>
-        <div class="row">
-            <div class="col-sm-3">
-                <h5>Serves {{recipe.num_servings}}</h5>
+        <div class="col-sm-4">
+            <div class="row">
+                <img id="photo" class="img-responsive" ng-src="./img/{{recipe.meal_title}}.jpeg">
             </div>
-            <div class="col-sm-3"><h5>{{recipe.price_total}}</h5></div></div>
-        <div class="row">
-            <div class="col-sm-6">
-                <h4>Ingredients</h4>
-                <ul>
-                    <li ng-repeat="ingredient in recipe.ingredients.split(',')">{{ingredient}}</li>
-                </ul>
+            <!-- oh god only png -->
+            <div class="top-"></div>
+            <div class="content">
+                <div class="row"><h2>{{recipe.meal_title}}</h2></div>
+                <div class="row">
+                    <div class="col-sm-3"><h4>SERVES {{recipe.num_servings}}</h4></div>
+                    <div class="col-sm-3"><h4>COSTS {{recipe.price_total}}</h4></div>
+                </div>
+                <div class="row">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li ng-repeat="ingredient in recipe.ingredients.split(',')">{{ingredient}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <h4>Instructions</h4>
-            <ol>
-                <li ng-repeat="step in vm.customSplit(recipe.instructions)">{{step}}</li>
-            </ol>
+        <div class="col-sm-8">
+            <div class="top-buffer"></div>
+            <div class="content">
+                <div class="row">
+                    <ol>
+                        <li ng-repeat="step in vm.customSplit(recipe.instructions)">{{step}}</li>
+                    </ol>    
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-  </div>
-  </body>
-
+    
+</body>
 </html>
