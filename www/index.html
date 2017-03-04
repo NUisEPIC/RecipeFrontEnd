@@ -28,21 +28,36 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://nuisepic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <access origin="*" />
+        <allow-navigation href="*"/>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src *;">-->
+
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/semantic-ui/dist/semantic.css">
         <title>Recipe Front End</title>
     </head>
-    <body>
+    <body ng-app="app">
         <div class="app">
-            <h1>Recipe Front End</h1>
-            <ul id="recipes">
-            	<li><a href="Recipes/SampleRecipe.html">SampleRecipe</a></li>
-            </ul>
+            <!--<h1>hihihi</h1>-->
+            <!--<h1>Recipe Front End</h1>-->
+            <!--<ul id="recipes">-->
+                <!--<li><a href="views/recipe.html">SampleRecipe</a></li>-->
+            <!--</ul>-->
+            <ng-view></ng-view>
         </div>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="node_modules/semantic-ui/dist/semantic.js"></script>
+        <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="js/router.js"></script>
+        <script type="text/javascript" src="js/recipeListController.js"></script>
+        <!--<script type="text/javascript" src="js/recipeController.js"></script>-->
     </body>
 </html>
