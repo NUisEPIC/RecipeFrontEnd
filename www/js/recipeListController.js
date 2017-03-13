@@ -12,7 +12,8 @@
         //     ingredients: ['milk', 'eggs', 'cheese'],
         //     image: 'scrambled_eggs.jpeg'
         // }
-
+        vm.allergens = ['bread', 'nuts', 'eggs', 'other kind of bread'];
+        vm.diets = ['vegan', 'vegetarian', 'extra vegan'];
         $(function() {
             $.get('https://nuisepic.com/recipedb')
                 .done(function(res) {
@@ -27,7 +28,6 @@
                 if (e.which == 10 || e.which == 13) { 
                     $('form').submit(function() {
                         e.preventDefault();
-                        
                     });
                 }
             });

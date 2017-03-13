@@ -1,31 +1,21 @@
-<div class="ui grid container">
-    <div class="centered row">
-        <h1 class="ui centered header">Recipes</h1>
-        <div class="ui input">
-            <form>
-                <input id="search" type="text" placeholder="Search..." />
-            </form>
+
+<div class="container">
+    <h1 class="centered header">Recipes</h1>
+    <div class="input">
+        <form>
+            <input id="search" type="text" placeholder="Search..." />
+        </form>
+    </div>
+    <div class="container">
+        <h4>Allergies</h4>
+        <div ng-repeat="allergen in vm.allergens" class="row">
+            <label><input type="checkbox" checklist-model="user.allergens" checklist-value="allergen">{{allergen}}</label>
         </div>
     </div>
-    <div class="centered row">
-        <div class="ui divided link items">
-            <div class="item" ng-repeat="recipe in vm.recipes" ng-href="/recipe-details/{{recipe.id}}">
-                <div class="image">
-                    <img ng-src="img/{{recipe.image}}">
-                </div>
-                <div class="content">
-                    <a class="header">{{recipe.name}}</a>
-                    <div class="description">
-                        <p>
-                            {{recipe.description}}
-                        </p>
-                    </div>
-                    <div class="extra">
-                        {{recipe.ingredients}}
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <h4>Dietary Restrictions</h4>
+        <div ng-repeat="diet in vm.diets" class="row">
+            <label><input type="checkbox" checklist-model="user.diets" checklist-value="diet">{{diet}}</label>
         </div>
     </div>
-    <button ng-click="vm.request()">TEST BUTTON</button>
 </div>
