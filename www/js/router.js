@@ -5,7 +5,7 @@
 
     function Router($routeProvider) {
         $routeProvider
-            .when('/list', {
+            .when('/', {
                 templateUrl: 'views/list.html',
                 controller: 'RecipeListController',
                 controllerAs: 'vm'
