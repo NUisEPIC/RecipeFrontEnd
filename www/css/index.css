@@ -95,5 +95,3 @@ h1, h4, h5 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-
-.top-buffer { margin-top: 2em; }
