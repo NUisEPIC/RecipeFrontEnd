@@ -1,0 +1,4 @@
+/* Empty. Add your own CSS if you like */
+.recipe-image, .list.card .item.item-image {
+    max-height:400px;
+}
